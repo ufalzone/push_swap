@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   init_pile.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 17:45:50 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/08 18:38:25 by ufalzone         ###   ########.fr       */
+/*   Created: 2025/01/08 19:49:32 by ufalzone          #+#    #+#             */
+/*   Updated: 2025/01/08 19:52:11 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../../includes/push_swap.h"
 
-# include "struct.h"
-# include "operations.h"
-# include "../libft/includes/libft.h"
-
-/*
-*   Parsing
-*/
-
-int	check_all(char **str);
-int	*args_to_int(char **av, int ac);
-
-/*
-*   Init
-*/
-
-void init_piles(t_pile *a, t_pile *b, int *tab, int size);
-
-#endif
+void init_piles(t_pile *a, t_pile *b, int *tab, int size)
+{
+    a->top = init_numbers(tab, size - 1);
+    a->size = size - 1;
+    b->top = NULL;
+    b->size = 0;
+}
