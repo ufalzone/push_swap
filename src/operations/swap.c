@@ -6,7 +6,7 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 15:39:57 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/06 18:34:23 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/08 16:13:32 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,12 @@ void s_mouv(t_pile *pile)
         return;
     first = pile->top;
     second = pile->top->next;
-    
-    // Mettre à jour les liens de first et second
     first->next = second->next;
     first->prev = second;
     second->next = first;
     second->prev = first->prev;
-    
-    // Mettre à jour les liens avec le reste de la liste
     first->next->prev = first;
     second->prev->next = second;
-    
-    // Mettre à jour le top
     pile->top = second;
 }
 
