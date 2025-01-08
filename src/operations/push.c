@@ -6,11 +6,11 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 15:42:32 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/08 17:00:00 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/08 18:38:33 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/struct.h"
+#include "../../includes/push_swap.h"
 
 void pa(t_pile *a, t_pile *b)
 {

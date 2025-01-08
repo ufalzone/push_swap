@@ -6,11 +6,11 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 15:43:50 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/08 16:12:47 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/08 18:40:14 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/struct.h"
+#include "../../includes/push_swap.h"
 
 void rr_mouv(t_pile *pile)
 {
@@ -32,10 +32,9 @@ void rrb(t_pile *b, int is_rrr)
         write(1, "rrb\n", 4);
 }
 
-void rrr(t_pile *a, t_pile *b, int is_rrr)
+void rrr(t_pile *a, t_pile *b)
 {
     rra(a, 1);
     rrb(b, 1);
-    if (is_rrr == 0)
-        write(1, "rrr\n", 4);
+    write(1, "rrr\n", 4);
 }

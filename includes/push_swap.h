@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct.h                                           :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/06 14:47:46 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/08 18:38:01 by ufalzone         ###   ########.fr       */
+/*   Created: 2025/01/08 17:45:50 by ufalzone          #+#    #+#             */
+/*   Updated: 2025/01/08 18:38:25 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCT_H
-# define STRUCT_H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-#include <stdlib.h>
-#include <unistd.h>
+# include "struct.h"
+# include "operations.h"
+# include "../libft/includes/libft.h"
 
-typedef struct  s_number
-{
-    int value;
-    int rank;
-    struct s_number *next;
-    struct s_number *prev;
-} t_number ;
+/*
+*   Parsing
+*/
 
-typedef struct  s_pile
-{
-    struct s_number *top;
-    int size;
-} t_pile;
+int	check_all(char **str);
 
 #endif

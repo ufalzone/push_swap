@@ -6,7 +6,7 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 18:36:45 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/06 18:38:37 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/08 18:39:38 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ void pb(t_pile *a, t_pile *b);
 /*
 *   Rotate
 */ 
-void ra(t_pile *a, t_pile *b, int is_rr);
-void rb(t_pile *a, t_pile *b, int is_rr);
+void ra(t_pile *a, int is_rr);
+void rb(t_pile *b, int is_rr);
 void rr(t_pile *a, t_pile *b);
 
 /*
 *   Reverse rotate
 */ 
-void rra(t_pile *a, t_pile *b, int is_rrr);
-void rrb(t_pile *a, t_pile *b, int is_rrr);
+void rra(t_pile *a, int is_rrr);
+void rrb(t_pile *b, int is_rrr);
 void rrr(t_pile *a, t_pile *b);
