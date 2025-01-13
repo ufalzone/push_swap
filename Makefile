@@ -6,7 +6,7 @@
 #    By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/30 18:16:42 by ufalzone          #+#    #+#              #
-#    Updated: 2025/01/08 18:33:44 by ufalzone         ###   ########.fr        #
+#    Updated: 2025/01/09 20:13:39 by ufalzone         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ DEP_FILES = $(OBJ_FILES:.o=.d)
 
 # Flags de compilation
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I$(INCLUDE_DIR) -g -MMD -MP
+CFLAGS = -I$(INCLUDE_DIR) -g -MMD -MP
 
 # Librairie libft
 LIBFT = $(LIBFT_DIR)/libft.a
@@ -52,6 +52,7 @@ $(LIBFT):
 
 # Création du dossier obj et ses sous-dossiers
 $(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
 	@mkdir -p $(dir $(OBJ_FILES))
 
 # Compile le projet push_swap

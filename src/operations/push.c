@@ -6,66 +6,74 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 15:42:32 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/08 18:38:33 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/09 20:37:41 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "../../includes/struct.h"
+
+static void push_empty(t_pile *dest, t_number *node)
+{
+    dest->top = node;
+    node->next = node;
+    node->prev = node;
+    dest->size++;
+}
+
+static void push_nonempty(t_pile *dest, t_number *node)
+{
+    node->next = dest->top;
+    node->prev = dest->top->prev;
+    dest->top->prev->next = node;
+    dest->top->prev = node;
+    dest->top = node;
+    dest->size++;
+}
+
+static t_number *pop_node(t_pile *src)
+{
+    t_number *node;
+
+    if (src->size == 0)
+        return (NULL);
+    node = src->top;
+    if (src->size == 1)
+        src->top = NULL;
+    else
+    {
+        src->top = src->top->next;
+        src->top->prev = node->prev;
+        node->prev->next = src->top;
+    }
+    src->size--;
+    return (node);
+}
 
 void pa(t_pile *a, t_pile *b)
 {
-    t_number *temp;
-    
-    if (b->size == 0)
+    t_number *node;
+
+    node = pop_node(b);
+    if (!node)
         return;
-    temp = b->top;
-    b->top = b->top->next;
-    b->size--;
-    if (b->size == 0)
-        b->top = NULL;
     if (a->size == 0)
-    {
-        a->top = temp;
-        temp->next = temp;
-        temp->prev = temp;
-    }
+        push_empty(a, node);
     else
-    {
-        temp->next = a->top;
-        temp->prev = a->top->prev;
-        a->top->prev->next = temp;
-        a->top->prev = temp;
-        a->top = temp;
-    }
-    a->size++;
+        push_nonempty(a, node);
     write(1, "pa\n", 3);
 }
 
 void pb(t_pile *a, t_pile *b)
 {
-    t_number *temp;
-    
-    if (a->size == 0)
+    t_number *node;
+
+    node = pop_node(a);
+    if (!node)
         return;
-    temp = a->top;
-    a->top = a->top->next;
-    a->size--;
-    if (a->size == 0)
-        a->top = NULL;
     if (b->size == 0)
-    {
-        b->top = temp;
-        temp->next = temp;
-        temp->prev = temp;
-    }
+        push_empty(b, node);
     else
-    {
-        temp->next = b->top;
-        temp->prev = b->top->prev;
-        b->top->prev->next = temp;
-        b->top->prev = temp;
-        b->top = temp;
-    }
-    b->size++;
+        push_nonempty(b, node);
     write(1, "pb\n", 3);
 }
+

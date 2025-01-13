@@ -6,7 +6,7 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 14:47:46 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/08 18:38:01 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/13 11:16:26 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 typedef struct  s_number
 {
     int value;
-    int rank;
+    int index;
     struct s_number *next;
     struct s_number *prev;
 } t_number ;

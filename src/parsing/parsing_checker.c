@@ -6,23 +6,39 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 17:32:23 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/08 18:22:27 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/13 10:55:34 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
+int already_sorted(int *array)
+{
+    int i;
+
+    i = 0;
+    while (array[i] && array[i + 1])
+    {
+        if (array[i] > array[i + 1])
+            return (1);
+        i++;
+    }
+    return (0);
+}
+
 static int check_digit(char **str)
 {
     int i;
     int j;
-        
+
     i = 0;
     while (str[i])
     {
         j = 0;
         if (str[i][0] == '-' || str[i][0] == '+')
             j++;
+        else if ((str[i][0] == '-' || str[i][0] == '+') && str[i][1] == '\0')
+            return (1);
         while (str[i][j])
         {
             if (!ft_isdigit(str[i][j]))
