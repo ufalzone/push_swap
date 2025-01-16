@@ -6,7 +6,7 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 17:32:05 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/13 17:16:41 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/14 17:16:06 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,59 +67,38 @@ int *args_to_int(char **av, int ac)
 }
 
 #include <stdio.h>
-static void display_piles(t_pile *a, t_pile *b)
+void display_piles(t_pile *a, t_pile *b)
 {
-    t_number *current_a;
-    t_number *current_b;
+    static int count = 0;
+    t_number *current;
     int i;
 
-    printf("=== PILE A ===\n");
-    printf("Size: %d\n", a->size);
+    count++;
+    printf("\n=== DISPLAY #%d ===\n", count);
+    printf("=== PILE A (%d) ===\n", a->size);
     if (a->size > 0)
     {
-        current_a = a->top;
+        current = a->top;
         i = 0;
-        do
+        while (i < a->size)
         {
-            printf("Node %d: Value = %d, Index = %d\n", i, current_a->value, current_a->index);
-            current_a = current_a->next;
+            printf("value: %d index: %d\n", current->value, current->index);
+            current = current->next;
             i++;
-        } while (current_a != a->top);
+        }
     }
 
-    printf("\n=== PILE B ===\n");
-    printf("Size: %d\n", b->size);
+    printf("\n=== PILE B (%d) ===\n", b->size);
     if (b->size > 0)
     {
-        current_b = b->top;
+        current = b->top;
         i = 0;
-        do
+        while (i < b->size)
         {
-            printf("Node %d: Value = %d, Index = %d\n", i, current_b->value, current_b->index);
-            current_b = current_b->next;
+            printf("value: %d index: %d\n", current->value, current->index);
+            current = current->next;
             i++;
-        } while (current_b != b->top);
+        }
     }
     printf("\n");
 }
-
-int main(int ac, char **av)
-{
-    if (ac <= 2)
-        return (write(1, "Error\n", 6), 1);
-    t_pile a;
-    t_pile b;
-
-    int *result = args_to_int(av, ac);
-    if (!result)
-        return (1);
-    if (!already_sorted(result))
-        return (0);
-    init_piles(&a, &b, result, ac - 1);
-	// display_piles(&a, &b);
-	algo(&a, &b);
-	// display_piles(&a, &b);
-    free(result);
-    return (0);
-}
-

@@ -6,7 +6,7 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 14:47:46 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/13 11:16:26 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/14 18:34:22 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,18 @@ typedef struct  s_pile
 {
     struct s_number *top;
     int size;
+	int target_pos;
+	int best_pos;
 } t_pile;
+
+//test
+t_pile *init_pile(void);
+t_number *create_number(int value);
+void add_front(t_pile *pile, t_number *new_number);
+void display_pile(t_pile *pile);
+void free_pile(t_pile *pile);
+void test_piles(void);
+int target_pos(t_pile *a, t_pile *b);
+
 
 #endif

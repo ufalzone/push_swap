@@ -6,7 +6,7 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 15:42:32 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/09 20:37:41 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/14 17:16:16 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,17 @@ static t_number *pop_node(t_pile *src)
         return (NULL);
     node = src->top;
     if (src->size == 1)
+    {
         src->top = NULL;
+    }
     else
     {
-        src->top = src->top->next;
-        src->top->prev = node->prev;
-        node->prev->next = src->top;
+        src->top = node->next;
+        node->prev->next = node->next;
+        node->next->prev = node->prev;
     }
+    node->next = NULL;
+    node->prev = NULL;
     src->size--;
     return (node);
 }
