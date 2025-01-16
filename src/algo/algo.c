@@ -6,7 +6,7 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 10:56:44 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/16 15:07:27 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/16 15:26:00 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	sort_big(t_pile *a, t_pile *b)
 	while (a->size > 3)
 	{
         target_pos(a, b);
-		printf("-- %d --\ntarget_pos_a: %d | target_pos_b: %d\nsize_a: %d | size_b: %d\ntop_a: %d | top_b: %d\n", operations, a->target_pos, b->target_pos, a->size, b->size, a->top->value, b->top->value);
+		printf("-- %d --\ntarget_pos_a: %d | target_pos_b: %d\nsize_a: %d | size_b: %d\ntop_a: %d | top_b: %d\n\n", operations, a->target_pos, b->target_pos, a->size, b->size, a->top->value, b->top->value);
         // 1. D'abord positionner B pour recevoir le nombre
         // execute_rotate_b(b);
         // 2. Puis positionner A
@@ -96,7 +96,7 @@ void	sort_big(t_pile *a, t_pile *b)
         // 3. Enfin faire le push
         pb(a, b);
 		execute_rotate_b(b);
-		printf("-- %d --\ntarget_pos_a: %d | target_pos_b: %d\nsize_a: %d | size_b: %d\ntop_a: %d | top_b: %d\n", operations, a->target_pos, b->target_pos, a->size, b->size, a->top->value, b->top->value);
+		printf("-- %d --\ntarget_pos_a: %d | target_pos_b: %d\nsize_a: %d | size_b: %d\ntop_a: %d | top_b: %d\n\n", operations, a->target_pos, b->target_pos, a->size, b->size, a->top->value, b->top->value);
 		operations++;
 	}
 	sort_3(a);
