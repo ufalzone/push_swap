@@ -6,11 +6,13 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 15:39:57 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/14 11:27:23 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/17 18:01:22 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/struct.h"
+
+//CORRIGER CELA DUPLIQUE
 
 void s_mouv(t_pile *pile)
 {

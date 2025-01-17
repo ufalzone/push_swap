@@ -6,7 +6,7 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 17:45:50 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/14 18:31:21 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/17 15:53:01 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,6 @@ void    sort_big(t_pile *a, t_pile *b);
 void    algo(t_pile *a, t_pile *b);
 int     target_pos_b(t_pile *a, t_pile *b);
 void    execute_rotations(t_pile *a, t_pile *b, int best_pos_a, int best_pos_b);
+void    target_pos(t_pile *a, t_pile *b);
+void    test_algo_turk(t_pile *a, t_pile *b);
 #endif

@@ -6,7 +6,7 @@
 #    By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/30 18:16:42 by ufalzone          #+#    #+#              #
-#    Updated: 2025/01/09 20:13:39 by ufalzone         ###   ########.fr        #
+#    Updated: 2025/01/17 17:41:21 by ufalzone         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ DEP_FILES = $(OBJ_FILES:.o=.d)
 
 # Flags de compilation
 CC = cc
-CFLAGS = -I$(INCLUDE_DIR) -g -MMD -MP
+CFLAGS = -I$(INCLUDE_DIR) -g3 -MMD -MP -Wall -Wextra
 
 # Librairie libft
 LIBFT = $(LIBFT_DIR)/libft.a
