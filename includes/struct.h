@@ -6,7 +6,7 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 14:47:46 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/14 18:34:22 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/17 15:05:17 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ typedef struct  s_pile
     int size;
 	int target_pos;
 	int best_pos;
+	int min_value;
+	int max_value;
+	int rotation_desc_a;
+	int rotation_desc_b;
 } t_pile;
 
 //test
@@ -40,6 +44,5 @@ void display_pile(t_pile *pile);
 void free_pile(t_pile *pile);
 void test_piles(void);
 int target_pos(t_pile *a, t_pile *b);
-
 
 #endif
