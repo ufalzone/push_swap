@@ -6,7 +6,7 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 17:32:05 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/14 17:16:06 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/20 16:32:18 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,40 +65,46 @@ int *args_to_int(char **av, int ac)
     free_split(split);
     return (result);
 }
-
 #include <stdio.h>
 void display_piles(t_pile *a, t_pile *b)
 {
     static int count = 0;
-    t_number *current;
+    t_number *current_a;
+    t_number *current_b;
     int i;
+    int max_size;
 
     count++;
     printf("\n=== DISPLAY #%d ===\n", count);
-    printf("=== PILE A (%d) ===\n", a->size);
-    if (a->size > 0)
-    {
-        current = a->top;
-        i = 0;
-        while (i < a->size)
-        {
-            printf("value: %d index: %d\n", current->value, current->index);
-            current = current->next;
-            i++;
-        }
-    }
+    printf("=== PILE A (%d) === === PILE B (%d) ===\n", a->size, b->size);
 
-    printf("\n=== PILE B (%d) ===\n", b->size);
-    if (b->size > 0)
+    max_size = (a->size > b->size) ? a->size : b->size;
+    current_a = a->top;
+    current_b = b->top;
+    i = 0;
+    while (i < max_size)
     {
-        current = b->top;
-        i = 0;
-        while (i < b->size)
+        if (i < a->size)
         {
-            printf("value: %d index: %d\n", current->value, current->index);
-            current = current->next;
-            i++;
+            printf("%11d", current_a->value);
+            current_a = current_a->next;
+            if (current_a == a->top)  // Arrêter quand on revient au début
+                current_a = NULL;
         }
+        else
+            printf("%11s", "");
+
+        printf("     ");
+
+        if (i < b->size)
+        {
+            printf("%d", current_b->value);
+            current_b = current_b->next;
+            if (current_b == b->top)  // Arrêter quand on revient au début
+                current_b = NULL;
+        }
+        printf("\n");
+        i++;
     }
     printf("\n");
 }

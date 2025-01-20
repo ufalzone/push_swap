@@ -6,7 +6,7 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 15:43:12 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/14 10:22:21 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/20 16:24:53 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,13 @@ void r_mouv(t_pile *pile)
     pile->top = pile->top->next;
 }
 
-void ra(t_pile *a, int is_rr)
+void ra(t_pile *a)
 {
-		r_mouv(a);
-    if (is_rr == 0)
+	r_mouv(a);
     write(1, "ra\n", 3);
 }
 
-void rb(t_pile *b, int is_rr)
+void rb(t_pile *b)
 {
     r_mouv(b);
     write(1, "rb\n", 3);

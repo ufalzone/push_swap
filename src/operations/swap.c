@@ -6,7 +6,7 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 15:39:57 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/17 18:01:22 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/20 16:47:17 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,20 @@ void s_mouv(t_pile *pile)
 
     if (pile->size <= 1)
         return;
+
     first = pile->top;
     second = pile->top->next;
 
-    // Mise à jour des connexions externes
-    if (pile->size > 2)
-        second->next->prev = first;
-    first->prev->next = second;
+    // Mise à jour des liens entre first, second, et leurs voisins
+    first->prev->next = second; // L'élément avant first pointe maintenant vers second
+    second->next->prev = first; // L'élément après second pointe maintenant vers first
 
-    // Mise à jour des connexions entre first et second
-    first->next = second->next;
-    second->next = first;
-    second->prev = first->prev;
-    first->prev = second;
+    first->next = second->next; // First pointe vers le suivant de second
+    second->next = first;       // Second pointe vers first
+    second->prev = first->prev; // Second pointe vers l'ancien précédent de first
+    first->prev = second;       // First pointe vers second
 
-    // Mise à jour du top
+    // Mise à jour du sommet de la pile
     pile->top = second;
 }
 
