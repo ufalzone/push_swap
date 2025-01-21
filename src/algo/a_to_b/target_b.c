@@ -6,13 +6,14 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 20:34:12 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/20 20:49:17 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/21 18:49:46 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/push_swap.h"
 
-// Renvoie l'index ou il faut placer l'element de la pile b dans l'ordre decroissant
+// Renvoie l'index ou il faut placer l'element de la pile b
+// dans l'ordre decroissant
 int	find_target_pos_b(t_number *number, t_pile *b)
 {
 	t_number	*current;
@@ -36,14 +37,11 @@ int	find_target_pos_b(t_number *number, t_pile *b)
 	return (i + 1);
 }
 
-// Calcul le nombre de rotation a faire pour placer l'element de la pile b
 void	target_pos_desc(t_pile *a, t_pile *b)
 {
 	t_number	*current;
 	int			i;
-	int			cost_a;
-	int			cost_b;
-	int			cost_total;
+	int			costs[2];
 	int			min_cost;
 
 	current = a->top;
@@ -51,14 +49,13 @@ void	target_pos_desc(t_pile *a, t_pile *b)
 	min_cost = -1;
 	while (++i < a->size)
 	{
-		cost_a = calculate_cost_desc(i, a);
-		cost_b = calculate_cost_desc(find_target_pos_b(current, b), b);
-		cost_total = abs(cost_a) + abs(cost_b);
-		if (cost_total < min_cost || min_cost == -1)
+		costs[0] = calculate_cost_desc(i, a);
+		costs[1] = calculate_cost_desc(find_target_pos_b(current, b), b);
+		if (ft_abs(costs[0]) + ft_abs(costs[1]) < min_cost || min_cost == -1)
 		{
-			min_cost = cost_total;
-			a->target_pos = cost_a;
-			b->target_pos = cost_b;
+			min_cost = ft_abs(costs[0]) + ft_abs(costs[1]);
+			a->target_pos = costs[0];
+			b->target_pos = costs[1];
 		}
 		current = current->next;
 	}

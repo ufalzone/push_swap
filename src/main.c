@@ -6,7 +6,7 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 15:48:14 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/21 17:02:51 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/21 18:42:11 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	main(int ac, char **av)
 	if (!already_sorted(result))
 		return (0);
 	init_piles(&a, &b, result, size);
-	// display_piles(&a, &b);
 	algo_sorting(&a, &b);
 	free(result);
 	free_piles(&a, &b);

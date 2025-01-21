@@ -6,11 +6,18 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 20:38:01 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/21 17:05:43 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/21 18:52:16 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+int	ft_abs(int n)
+{
+	if (n < 0)
+		return (-n);
+	return (n);
+}
 
 // Trouver le int max, et le int min et son index
 void	find_max_min(t_pile *pile)
@@ -41,17 +48,17 @@ void	find_max_min(t_pile *pile)
 		current = current->next;
 	}
 }
-static void free_pile(t_pile *pile)
+
+static void	free_pile(t_pile *pile)
 {
-	t_number *current;
-	t_number *next;
-	int size;
+	t_number	*current;
+	t_number	*next;
+	int			size;
 
 	if (!pile || !pile->top)
-		return;
+		return ;
 	current = pile->top;
 	size = pile->size;
-
 	while (size > 0)
 	{
 		next = current->next;
@@ -61,7 +68,7 @@ static void free_pile(t_pile *pile)
 	}
 }
 
-void free_piles(t_pile *a, t_pile *b)
+void	free_piles(t_pile *a, t_pile *b)
 {
 	free_pile(a);
 	free_pile(b);

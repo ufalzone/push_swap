@@ -6,12 +6,11 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 17:32:05 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/21 17:21:34 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/21 18:42:05 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
 
 static char	*join_args(char **av, int ac)
 {
@@ -70,44 +69,44 @@ int	*args_to_int(char **av, int ac, int *size)
 	return (result);
 }
 
-void	display_piles(t_pile *a, t_pile *b)
-{
-	static int	count = 0;
-	t_number	*current_a;
-	t_number	*current_b;
-	int			i;
-	int			max_size;
+// void	display_piles(t_pile *a, t_pile *b)
+// {
+// 	static int	count = 0;
+// 	t_number	*current_a;
+// 	t_number	*current_b;
+// 	int			i;
+// 	int			max_size;
 
-	count++;
-	printf("\n=== DISPLAY #%d ===\n", count);
-	printf("=== PILE A (%d) === === PILE B (%d) ===\n", a->size, b->size);
-	max_size = (a->size > b->size) ? a->size : b->size;
-	current_a = a->top;
-	current_b = b->top;
-	i = 0;
-	while (i < max_size)
-	{
-		if (i < a->size)
-		{
-			printf("%11d", current_a->value);
-			printf("(%d)", current_a->index);
-			current_a = current_a->next;
-			if (current_a == a->top) // Arrêter quand on revient au début
-				current_a = NULL;
-		}
-		else
-			printf("%11s", "");
-		printf("     ");
-		if (i < b->size)
-		{
-			printf("%d", current_b->value);
-			printf("(%d)", current_b->index);
-			current_b = current_b->next;
-			if (current_b == b->top) // Arrêter quand on revient au début
-				current_b = NULL;
-		}
-		printf("\n");
-		i++;
-	}
-	printf("\n");
-}
+// 	count++;
+// 	printf("\n=== DISPLAY #%d ===\n", count);
+// 	printf("=== PILE A (%d) === === PILE B (%d) ===\n", a->size, b->size);
+// 	max_size = (a->size > b->size) ? a->size : b->size;
+// 	current_a = a->top;
+// 	current_b = b->top;
+// 	i = 0;
+// 	while (i < max_size)
+// 	{
+// 		if (i < a->size)
+// 		{
+// 			printf("%11d", current_a->value);
+// 			printf("(%d)", current_a->index);
+// 			current_a = current_a->next;
+// 			if (current_a == a->top) // Arrêter quand on revient au début
+// 				current_a = NULL;
+// 		}
+// 		else
+// 			printf("%11s", "");
+// 		printf("     ");
+// 		if (i < b->size)
+// 		{
+// 			printf("%d", current_b->value);
+// 			printf("(%d)", current_b->index);
+// 			current_b = current_b->next;
+// 			if (current_b == b->top) // Arrêter quand on revient au début
+// 				current_b = NULL;
+// 		}
+// 		printf("\n");
+// 		i++;
+// 	}
+// 	printf("\n");
+// }

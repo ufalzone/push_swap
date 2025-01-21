@@ -6,7 +6,7 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 20:44:05 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/21 18:40:11 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/21 18:48:31 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ void	sort_3_a(t_pile *a)
 		rra(a);
 }
 
-// Renvoie l'index ou il faut placer l'element de la pile a dans l'ordre croissant
+// Renvoie l'index ou il faut placer l'element
+//de la pile a dans l'ordre croissant
 int	find_target_pos_a(t_number *number, t_pile *a)
 {
 	t_number	*current;

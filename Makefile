@@ -6,7 +6,7 @@
 #    By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/30 18:16:42 by ufalzone          #+#    #+#              #
-#    Updated: 2025/01/20 20:20:06 by ufalzone         ###   ########.fr        #
+#    Updated: 2025/01/21 20:14:35 by ufalzone         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ all: $(OBJ_DIR) $(LIBFT) $(NAME)
 
 # Compile la libft
 $(LIBFT):
-	@echo "$(BLUE)🔨 Compilation de la libft...$(RESET)"
+	@printf "$(BLUE)🔨 Compilation de la libft...$(RESET)\r"
 	@$(MAKE) -C $(LIBFT_DIR)
 
 # Création du dossier obj et ses sous-dossiers
@@ -57,13 +57,13 @@ $(OBJ_DIR):
 
 # Compile le projet push_swap
 $(NAME): $(OBJ_FILES)
-	@printf "\r$(GREEN)🚀 Compilation de $(NAME)...                                                                                                                        $(RESET)"
+	@printf "$(GREEN)🚀 Compilation de $(NAME)...$(RESET)                                                                \r"
 	@$(CC) $(OBJ_FILES) $(CFLAGS) -L$(LIBFT_DIR) -lft -o $(NAME)
-	@echo "\n$(YELLOW)🚀 Compilation fini ! $(GREEN)$(NAME) $(YELLOW)est prêt !$(RESET)"
+	@printf "\n$(YELLOW)🚀 Compilation fini ! $(GREEN)$(NAME) $(YELLOW)est prêt !$(RESET)                            \n"
 
 # Règle de compilation des fichiers objets
 $(OBJ_DIR)/%.o: %.c
-	@echo "$(CYAN)🔄 Compilation de $<...$(RESET)"
+	@printf "$(CYAN)🔄 Compilation de $<...$(RESET)\r"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 # Nettoyage des fichiers objets

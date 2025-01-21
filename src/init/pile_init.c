@@ -12,26 +12,26 @@
 
 #include "../../includes/push_swap.h"
 
-void    push_back(t_pile *pile, t_number *new)
+void	push_back(t_pile *pile, t_number *new)
 {
-    if (pile->top == NULL)
-    {
-        pile->top = new;
-        new->next = new;
-        new->prev = new;
-        pile->size = 1;
-        return;
-    }
-    new->next = pile->top;
-    new->prev = pile->top->prev;
-    pile->top->prev->next = new;
-    pile->top->prev = new;
-    pile->size++;
+	if (pile->top == NULL)
+	{
+		pile->top = new;
+		new->next = new;
+		new->prev = new;
+		pile->size = 1;
+		return ;
+	}
+	new->next = pile->top;
+	new->prev = pile->top->prev;
+	pile->top->prev->next = new;
+	pile->top->prev = new;
+	pile->size++;
 }
 
-t_number *init_number(int value)
+t_number	*init_number(int value)
 {
-	t_number *number;
+	t_number	*number;
 
 	number = (t_number *)malloc(sizeof(t_number));
 	if (!number)
@@ -43,10 +43,10 @@ t_number *init_number(int value)
 	return (number);
 }
 
-void init_piles(t_pile *a, t_pile *b, int *result, int size)
+void	init_piles(t_pile *a, t_pile *b, int *result, int size)
 {
-	int i;
-	t_number *tmp;
+	int			i;
+	t_number	*tmp;
 
 	a->top = NULL;
 	b->top = NULL;

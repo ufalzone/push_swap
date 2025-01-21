@@ -6,7 +6,7 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 20:42:39 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/21 18:00:55 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/21 18:41:02 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	execute_move_asc(t_pile *a)
 	}
 }
 
-void final_sort(t_pile *a)
+void	final_sort(t_pile *a)
 {
 	find_max_min(a);
 	while (a->top->value != a->min_value)

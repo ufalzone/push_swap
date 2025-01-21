@@ -13,36 +13,36 @@
 #ifndef STRUCT_H
 # define STRUCT_H
 
-#include <stdlib.h>
-#include <unistd.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-typedef struct  s_number
+typedef struct s_number
 {
-    int value;
-    int index;
-    struct s_number *next;
-    struct s_number *prev;
-} t_number ;
+	int				value;
+	int				index;
+	struct s_number	*next;
+	struct s_number	*prev;
+}					t_number;
 
-typedef struct  s_pile
+typedef struct s_pile
 {
-    struct s_number *top;
-    int size;
-	int target_pos;
-	int best_pos;
-	int min_value;
-	int max_value;
-	int min_index;
-	int max_index;
-	int rotation_desc_a;
-	int rotation_desc_b;
-} t_pile;
+	struct s_number	*top;
+	int				size;
+	int				target_pos;
+	int				best_pos;
+	int				min_value;
+	int				max_value;
+	int				min_index;
+	int				max_index;
+	int				rotation_desc_a;
+	int				rotation_desc_b;
+}					t_pile;
 
-//test
-t_pile *init_pile(void);
-t_number *create_number(int value);
-void add_front(t_pile *pile, t_number *new_number);
-void display_pile(t_pile *pile);
-void test_piles(void);
+// test
+t_pile				*init_pile(void);
+t_number			*create_number(int value);
+void				add_front(t_pile *pile, t_number *new_number);
+void				display_pile(t_pile *pile);
+void				test_piles(void);
 
 #endif
