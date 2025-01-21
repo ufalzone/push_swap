@@ -6,7 +6,7 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 14:47:46 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/17 18:59:35 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/21 17:02:48 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ t_pile *init_pile(void);
 t_number *create_number(int value);
 void add_front(t_pile *pile, t_number *new_number);
 void display_pile(t_pile *pile);
-void free_pile(t_pile *pile);
 void test_piles(void);
 
 #endif

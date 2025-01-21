@@ -6,7 +6,7 @@
 /*   By: ufalzone <ufalzone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 19:14:38 by ufalzone          #+#    #+#             */
-/*   Updated: 2025/01/13 12:25:01 by ufalzone         ###   ########.fr       */
+/*   Updated: 2025/01/21 15:37:09 by ufalzone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ t_number *init_number(int value)
 	return (number);
 }
 
-void init_piles(t_pile *a, t_pile *b, int *result, int ac)
+void init_piles(t_pile *a, t_pile *b, int *result, int size)
 {
 	int i;
 	t_number *tmp;
@@ -52,7 +52,7 @@ void init_piles(t_pile *a, t_pile *b, int *result, int ac)
 	b->top = NULL;
 	b->size = 0;
 	i = 0;
-	while (i < ac)
+	while (i < size)
 	{
 		tmp = init_number(result[i]);
 		push_back(a, tmp);
